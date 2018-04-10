@@ -1,0 +1,178 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 0 0 10px 0;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    background: #02b3e4;
+    cursor: default;
+    pointer-events: none;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #22d012;
+    font-size: 33px;
+    pointer-events: none;
+}
+
+.deck .card.stop {
+    pointer-events: none;
+}
+
+
+.deck .card.wrong {
+    background: red;
+}
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars,
+.end .fstars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li,
+.end .fstars li {
+    list-style: none;
+    display: inline-block;
+    color: #ffd700;
+}
+
+.score-panel .timer {
+    padding-left: 80px;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+/*
+ * the end message
+ */
+.end {
+    text-align: center;
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    display: none;
+}
+.apper {
+    display: block;
+    -webkit-transition: .3s all ease-in-out;
+    -moz-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
+}
+
+.end span {
+    color: green;
+}
+.end #playA {
+    width: 25%;
+    height: 55px;
+    background-color: #02b3e4;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 1px solid #02b3e4;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    -webkit-transition: .3s all ease-in-out;
+    -moz-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
+}
+.end #playA:hover {
+    background-color: #fff;
+    color: #02b3e4;
+}
+.strong {
+    font-size: 16px;
+    font-weight: bold;
+}
